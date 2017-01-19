@@ -70,7 +70,8 @@ curl "http://localhost:8501/a.mp4?ts=5&te=20" -svo /dev/null
 #Line:71  freopen("/home/work/qiuzhenguang/mp4/nginx/nginx-1.8.1/logs/module.log", "a", stdout);
 #Line:77  fflush(stdout);
 
-
+#4.moov.c
+#Line: 271, Line: 276, function mp4_split_options_set, modify "ts" to "start", "te" to "end"
 
 
 
