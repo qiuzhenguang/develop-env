@@ -10,6 +10,9 @@ This a project to record how to build some develop environment.
 
 4. add nginx-pcre, empty path, to be edit.
 
+5. add httpd-build, empty path, to be edit.
+
+
 
 
 
