@@ -12,6 +12,10 @@ wget https://github.com/drmingdrmer/nginx_mod_h264_streaming/archive/2.3.2.tar.g
 
 tar -xzvf 2.3.2.tar.gz
 
+#download pcre
+wget https://ftp.pcre.org/pub/pcre/pcre-8.40.tar.gz
+tar -xzvf pcre-8.40.tar.gz
+
 #configure
 
 cd nginx-1.8.1 
@@ -19,7 +23,8 @@ cd nginx-1.8.1
 PWD=`pwd`
 
 ./configure  \
---add-module=$PWD/../nginx_mod_h264_streaming-2.3.2/ 
+--add-module=$PWD/../nginx_mod_h264_streaming-2.3.2/  \
+--with-pcre=$PWD/../pcre-8.40/
 
 make
 
