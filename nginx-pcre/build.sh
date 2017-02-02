@@ -16,8 +16,10 @@ cd nginx-1.8.1
 
 PWD=`pwd`
 
+sed -i "s/disable-shared/disable-shared enable_cpp=no/g" ./auto/lib/pcre/make
+
 ./configure  \
---with-pcre=$PWD/../pcre-8.40/
+--with-pcre=$PWD/../pcre-8.40/  
 
 make
 
