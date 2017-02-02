@@ -7,7 +7,7 @@ wget http://nginx.org/download/nginx-1.8.1.tar.gz
 tar -xzvf nginx-1.8.1.tar.gz 
 
 #download pcre
-wget https://ftp.pcre.org/pub/pcre/pcre-8.40.tar.gz
+wget https://ftp.pcre.org/pub/pcre/pcre-8.40.tar.gz --no-check-certificate
 tar -xzvf pcre-8.40.tar.gz
 
 #configure
