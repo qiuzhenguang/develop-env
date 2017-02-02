@@ -14,6 +14,6 @@ This a project to record how to build some develop environment.
 
 6. aa
 
-
+# We do not need to add RSA key to github, We just need git config use.name/mail. and modify .git/config
 
 
