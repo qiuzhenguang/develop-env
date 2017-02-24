@@ -12,7 +12,9 @@ This a project to record how to build some develop environment.
 
 5. add httpd-build, empty path, to be edit.
 
-6. 
+6. add nginx-zlib empty path, to be edit.
+
+7. add nginx-openssl empty path, to be edit.
 
 # We do not need to add RSA key to github, We just need git config use.name/mail. and modify .git/config
 
