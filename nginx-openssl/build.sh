@@ -1,24 +1,37 @@
-#build nginx-1.8.1 and openssl
+#build nginx-1.11.10 and openssl
 
-#download nginx-1.8.1
+#download nginx-1.11.10
 
-wget http://nginx.org/download/nginx-1.8.1.tar.gz 
+wget http://nginx.org/download/nginx-1.11.10.tar.gz 
 
-tar -xzvf nginx-1.8.1.tar.gz 
+tar -xzvf nginx-1.11.10.tar.gz 
+
+#download pcre
+wget https://ftp.pcre.org/pub/pcre/pcre-8.40.tar.gz --no-check-certificate
+tar -xzvf pcre-8.40.tar.gz
 
 #download openssl
 wget https://www.openssl.org/source/openssl-1.1.0e.tar.gz  --no-check-certificate
-tar -xzvf penssl-1.1.0e.tar.gz
+tar -xzvf openssl-1.1.0e.tar.gz
+
+#build openssl
+cd openssl-1.1.0e
+PWD=`pwd`
+./config --prefix=$PWD/.openssl
+make
+make install
+cd -
 
 #configure
 
-cd nginx-1.8.1 
+cd nginx-1.11.10 
 
 PWD=`pwd`
+sed -i "s/disable-shared/disable-shared enable_cpp=no/g" ./auto/lib/pcre/make
 
 ./configure  \
---with-openssl=$PWD/../penssl-1.1.0e/   \
---without-http_rewrite_module
+--with-pcre=$PWD/../pcre-8.40/   \
+--with-openssl=$PWD/../openssl-1.1.0e/.openssl
 
 make
 
@@ -44,5 +57,6 @@ curl http://localhost:8501/index.html
 ./objs/nginx -s stop -c conf/nginx.conf -p .
 
 
-# This file is not test ok.
+#I dont know how to build it, because in the objs/Makefile, the obj doesnt depend on openssl.
+
 
