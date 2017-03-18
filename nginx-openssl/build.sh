@@ -11,16 +11,16 @@ wget https://ftp.pcre.org/pub/pcre/pcre-8.40.tar.gz --no-check-certificate
 tar -xzvf pcre-8.40.tar.gz
 
 #download openssl
-wget https://www.openssl.org/source/openssl-1.1.0e.tar.gz  --no-check-certificate
-tar -xzvf openssl-1.1.0e.tar.gz
+wget https://www.openssl.org/source/openssl-1.0.2h.tar.gz  --no-check-certificate
+tar -xzvf openssl-1.0.2h.tar.gz
 
 #build openssl
-cd openssl-1.1.0e
-PWD=`pwd`
-./config --prefix=$PWD/.openssl
-make
-make install
-cd -
+#cd openssl-1.0.2h
+#PWD=`pwd`
+#./config --prefix=$PWD/.openssl
+#make
+#make install
+#cd -
 
 #configure
 
@@ -31,7 +31,10 @@ sed -i "s/disable-shared/disable-shared enable_cpp=no/g" ./auto/lib/pcre/make
 
 ./configure  \
 --with-pcre=$PWD/../pcre-8.40/   \
---with-openssl=$PWD/../openssl-1.1.0e/.openssl
+--with-openssl=$PWD/../openssl-1.0.2h \
+--with-http_ssl_module
+
+#!!!! must add http_ssl_module, or the openssl will not build !!!!
 
 make
 
@@ -58,5 +61,8 @@ curl http://localhost:8501/index.html
 
 
 #I dont know how to build it, because in the objs/Makefile, the obj doesnt depend on openssl.
+
+#HaHa~~, I get it done!  We MUST enable http_ssl_module module to make openssl build inside.
+
 
 
