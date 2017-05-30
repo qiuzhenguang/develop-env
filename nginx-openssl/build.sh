@@ -44,6 +44,15 @@ sed -i "s/listen       80;/listen       8501;/g" ./conf/nginx.conf
 mkdir logs
 touch logs/error.log
 
+#gen openssl keys:
+
+#openssl genrsa -des3 -out server.key 1024
+#openssl req -new -key server.key -out server.csr
+#cp server.key server.key.org
+#openssl rsa -in server.key.org -out server.key
+#openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+
+
 #run:
 #Test nginx.conf:
 ./objs/nginx -t -c conf/nginx.conf -p .
