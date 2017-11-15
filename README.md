@@ -16,6 +16,8 @@ This a project to record how to build some develop environment.
 
 7. add nginx-openssl empty path, to be edit.
 
+8. add gtest-build
+
 # We do not need to add RSA key to github, We just need git config use.name/mail. and modify .git/config
 #git config  user.name  qiuzhenguang
 #git config  user.email  "qiuzhenguang@163.com"   
