@@ -31,3 +31,10 @@ github.com ---> qiuzhenguang@github.com
 
 
 test branch foo/bar
+
+How to use git cherry-pick ?
+just git checkout master
+git cherry-pick 7299940782addfbf01edfddbe7e6e2a88305c8a1
+git add ...
+git commit ...
+git push ...
