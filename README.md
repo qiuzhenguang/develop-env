@@ -28,3 +28,6 @@ This a project to record how to build some develop environment.
     fetch = +refs/heads/*:refs/remotes/origin/*
     url = https://qiuzhenguang@github.com/qiuzhenguang/develop-env.git
 github.com ---> qiuzhenguang@github.com
+
+
+test branch foo/bar
