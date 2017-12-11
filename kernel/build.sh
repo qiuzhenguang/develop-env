@@ -7,7 +7,7 @@ sleep 5
 
 cd $PKG
 
-sed -i -e 's/unsigned long newsize = roundup_pow_of_two(size);/unsigned long newsize = roundup_pow_of_two(size);\n        printk(KERN_ERR "DEBUG_BY_QIUZHENGUANG.\\n")/g'  mm/readahead.c
+sed -i -e 's/unsigned long newsize = roundup_pow_of_two(size);/unsigned long newsize = roundup_pow_of_two(size);\n        printk(KERN_ERR "DEBUG_BY_QIUZHENGUANG.\\n");/g'  mm/readahead.c
 
 date >> log.txt
 echo "Start ..." >>log.txt
