@@ -18,6 +18,10 @@ This a project to record how to build some develop environment.
 
 8. add gtest-build
 
+9. add vim-env, build vim plugin, like ctags,taglist, etc
+
+10. add bind/build.sh
+
 # We do not need to add RSA key to github, We just need git config use.name/mail. and modify .git/config
 #git config  user.name  qiuzhenguang
 #git config  user.email  "qiuzhenguang@163.com"   
