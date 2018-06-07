@@ -37,6 +37,12 @@ unzip ./taglist.zip
 
 cp doc  plugin ~/.vim/ -r
 
+curl "https://www.vim.org/scripts/download_script.php?src_id=23731" -o ./NERD_tree.zip -L
+
+mkdir NERD_tree
+unzip ./NERD_tree.zip -d NERD_tree
+cp NERD_tree/* ~/.vim/ -r
+
 echo '
 export PATH=~/.tools/:$PATH
 ' >> ~/.bashrc
