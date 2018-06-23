@@ -29,9 +29,9 @@ let Tlist_Exit_OnlyWindow=1
 ' >> ~/.vimrc
 
 mkdir -p ~/.vim/plugin/
-curl "http://www.vim.org/scripts/download_script.php?src_id=3640" -o ~/.vim/plugin/minibufexpl.vim
+curl "http://www.vim.org/scripts/download_script.php?src_id=3640" -o ~/.vim/plugin/minibufexpl.vim -L
 
-curl "http://www.vim.org/scripts/download_script.php?src_id=19574" -o ./taglist.zip
+curl "http://www.vim.org/scripts/download_script.php?src_id=19574" -o ./taglist.zip -L
 
 unzip ./taglist.zip
 
