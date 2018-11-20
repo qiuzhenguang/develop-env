@@ -16,9 +16,10 @@ chmod 777 $myPWD/mysql/var -R
 
 chmod 777 /var/lib/mysql
 
-$myPWD/mysql/bin/mysql_install_db --user=root
+$myPWD/mysql/bin/mysql_install_db --user=root --defaults-file=$myPWD/mysql/share/mysql/my-medium.cnf
+$myPWD/mysql/bin/mysqld_safe --defaults-file=$myPWD/mysql/share/mysql/my-medium.cnf --user=root
+#--basedir=xxx
 
-$myPWD/mysql/bin/mysqld_safe --defaults-file=/etc/my.cnf  --user=root
 
 #$myPWD/mysql/bin/mysqladmin shutdown -uroot -S /var/lib/mysql/mysql.sock
 
