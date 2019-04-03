@@ -42,3 +42,13 @@ git cherry-pick 7299940782addfbf01edfddbe7e6e2a88305c8a1
 git add ...
 git commit ...
 git push ...
+
+How to use git rebase ?
+git checkout branchA
+git status
+git rebase master
+git status
+git pull
+git status
+git push
+
