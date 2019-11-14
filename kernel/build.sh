@@ -57,3 +57,15 @@ sleep 5
 
 date >> log.txt
 
+
+#FATAL: Module fuse not found.
+#https://github.com/s3fs-fuse/s3fs-fuse/issues/647
+
+#运行depmod -a重新配置依赖关系，以后就可以通过modprobe fuse来加载fuse模块了。
+
+#CentOS 6.10的内核：
+#http://vault.centos.org/6.10/os/Source/SPackages/kernel-2.6.32-754.el6.src.rpm
+
+
+#单独编译某个内核模块(fuse)[转]
+#http://blog.sina.com.cn/s/blog_553c6d4e0101fze4.html
